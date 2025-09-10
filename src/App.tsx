@@ -70,22 +70,23 @@ export const App = () => {
   const [currentSlide, setCurrentSlide] = useState(1);
   const [img, setImg] = useState("");
   const [price, setPrice] = useState(0);
-  const [loading, setLoading] = useState(false);
 
   const handleClickOne = ({ img, price }: { img: string; price: number }) => {
+    window.gtag("event", "6293_get_sub", {
+      variant_name: "ghk_6293_3",
+    });
+
     setImg(img);
     setPrice(price);
-    setStep(1);
   };
 
   const handleClickSubmit = () => {
-    setLoading(true);
-
-    Promise.resolve().then(() => {
-      setLoading(false);
-      LS.setItem(LSKeys.ShowThx, true);
-      setThx(true);
+    window.gtag("event", "6293_get_sub_2", {
+      variant_name: "ghk_6293_3",
     });
+
+    LS.setItem(LSKeys.ShowThx, true);
+    setThx(true);
   };
 
   if (thxShow) {
@@ -366,7 +367,6 @@ export const App = () => {
           <ButtonMobile
             block
             view="primary"
-            loading={loading}
             onClick={() => handleClickSubmit()}
           >
             Перейти

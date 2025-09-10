@@ -1,7 +1,11 @@
 declare global {
   interface Window {
     dataLayer: unknown[];
-    gtag: (e: "event", action: string) => void;
+    gtag: (
+      e: "event",
+      action: string,
+      variant_name: Record<string, string>,
+    ) => void;
   }
 }
 
@@ -22,7 +26,6 @@ export const sendDataToGA = async (payload: Payload) => {
         body: JSON.stringify({
           date,
           variant: "ghk_6293_3",
-          form_name: "forms1",
           ...payload,
         }),
         headers: {
