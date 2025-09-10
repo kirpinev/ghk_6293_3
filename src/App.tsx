@@ -78,6 +78,7 @@ export const App = () => {
 
     setImg(img);
     setPrice(price);
+    setStep(1);
   };
 
   const handleClickSubmit = () => {
