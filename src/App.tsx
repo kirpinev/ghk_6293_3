@@ -302,6 +302,13 @@ export const App = () => {
       {step === 0 && (
         <div
           className={appSt.bottomBtn}
+          style={{
+            padding: "16px",
+            marginLeft: "16px",
+            marginRight: "16px",
+            marginBottom: "12px",
+            width: "calc(100% - 32px)",
+          }}
         >
           <ButtonMobile
             block
